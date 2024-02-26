@@ -17,13 +17,17 @@
 
     <div class="wrapper">
         <div class="news">
+            <% if(articles != null) {%> <!--// In case we mispell the API link, we still want to render the page with an error message-->
             <% articles.forEach(function(article, index) { %>
                 <a href="#" class="news__card">
+                   <img src="<%- article.thumbnail_url %>" alt="<%- article.title.rendered %> ">
                    <h2> <%- article.title.rendered %> </h2>
-                   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente quasi cumque, laboriosam sequi sed rerum dolorum excepturi perspiciatis odio velit nobis illum 
-                    itaque et ad? Optio nemo tempore iste molestias.</p>
+                   <p>  <%- article.excerpt.rendered %></p>
                 </a>
             <% }) %>
+            <% } else { %>
+                <h2>No post was found.</h2>
+            <% } %>
         </div>
     </div>
 
