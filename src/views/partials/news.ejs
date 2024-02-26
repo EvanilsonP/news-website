@@ -8,5 +8,12 @@
 </head>
 <body>
     <h1>Node JS News</h1>
+
+    <% articles.forEach(function(article, index) { %>
+
+        <%- article.title.rendered %>
+        
+    <% }) %>
+
 </body>
 </html>
